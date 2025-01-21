@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 滑雪培训企业网站
 
-## Getting Started
+基于 Next.js 开发的滑雪培训企业官网，提供课程展示、在线预约等功能。
 
-First, run the development server:
+## 技术栈
+
+- Next.js 13.5.x
+- React 18
+- TypeScript
+- Tailwind CSS
+
+## 项目结构
+
+```
+src/
+├── app/                      # Next.js App Router
+│   ├── (auth)/              # 认证相关路由组
+│   │   ├── login/           # 登录页面
+│   │   └── register/        # 注册页面
+│   ├── admin/               # 管理后台
+│   │   ├── bookings/        # 预约管理
+│   │   └── courses/         # 课程管理
+│   ├── api/                 # API 路由
+│   │   ├── auth/           # 认证相关 API
+│   │   └── bookings/       # 预约相关 API
+│   ├── courses/            # 课程页面
+│   ├── booking/            # 预约页面
+│   ├── layout.tsx          # 根布局
+│   └── page.tsx            # 首页
+├── components/             # 组件目录
+│   ├── layout/            # 布局组件
+│   │   ├── Header/
+│   │   ├── Footer/
+│   │   └── Sidebar/
+│   ├── ui/                # 基础UI组件
+│   │   ├── Button/
+│   │   ├── Input/
+│   │   └── Card/
+│   ├── sections/          # 页面区块组件
+│   │   ├── Hero/
+│   │   ├── Courses/
+│   │   └── Contact/
+│   └── forms/             # 表单组件
+│       └── BookingForm/
+├── lib/                   # 工具函数和类型
+│   ├── types/            # TypeScript 类型定义
+│   ├── utils/            # 工具函数
+│   └── db/               # 数据库相关
+├── styles/               # 样式文件
+│   └── globals.css       # 全局样式
+└── public/               # 静态资源
+    └── images/           # 图片资源
+```
+
+## 功能模块
+
+- 首页
+  - 品牌展示
+  - 核心课程
+  - 教练团队
+  - 联系方式
+- 课程页面
+  - 课程列表
+  - 课程详情
+- 预约系统
+  - 预约表单
+  - 表单验证
+- 管理后台
+  - 预约管理
+  - 数据导出
+
+## 开发环境设置
+
+1. 安装依赖
+
+```bash
+npm install
+# or
+yarn install
+```
+
+2. 配置环境变量
+
+复制 `.env.example` 到 `.env.local` 并填写相关配置
+
+3. 启动开发服务器
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+访问 [http://localhost:3000](http://localhost:3000) 查看结果
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 部署
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+本项目推荐使用 Vercel 部署:
 
-## Learn More
+1. 将代码推送到 GitHub 仓库
+2. 在 Vercel 中导入项目
+3. 配置环境变量
+4. 自动部署
 
-To learn more about Next.js, take a look at the following resources:
+## 开发规范
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 使用 TypeScript 进行开发
+- 遵循 ESLint 规则
+- 使用 Prettier 格式化代码
+- 组件使用 Function Component
+- 样式采用 Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 注意事项
 
-## Deploy on Vercel
+- 确保移动端适配
+- 性能优化
+  - 图片优化
+  - 组件懒加载
+  - API 优化
+- 表单验证和错误处理
+- 后台访问控制
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 学习资源
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js 文档](https://nextjs.org/docs)
+- [React 文档](https://react.dev)
+- [Tailwind CSS 文档](https://tailwindcss.com/docs)
+- [TypeScript 文档](https://www.typescriptlang.org/docs)
+
+## License
+
+MIT
